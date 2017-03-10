@@ -1,0 +1,31 @@
+extends ../default
+
+block content
+
+  include ../templates/nav
+
+  div(class=['ui', 'container', 'grid', 'stackble'])
+    div(class=['ten', 'wide', 'column'])
+
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Adicionar Produtos'
+
+      div(class='form-novoproduto')
+        form(class=['ui', 'form'] action='/criarproduto' method='post')
+          div(class=['ui', 'field'])
+            label(for='nome')= 'Nome do produto'
+            input(type='text' name='nome' placeholder='Nome')
+          div(class=['ui', 'two', 'fields'])
+            div(class=['ui', 'field'])
+              label(for='preco')= 'Preço'
+              input(type='text' name='preco' placeholder='Preço')
+            div(class=['ui', 'field'])
+              label(for='estoque')= 'Estoque'
+              input(type='text' name='estoque' placeholder='Estoque')
+          button(class=['ui', 'button', 'basic', 'green'])= 'Adicionar Produto'
+          div(class=['ui', 'message', 'error'])
+
+      if info != undefined
+        div(class=['ui', 'message', 'success'])
+          i(class=['close', 'icon'])
+          div(class='header')= 'Produto registrado !'
+          p= info

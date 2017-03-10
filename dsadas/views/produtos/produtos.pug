@@ -1,0 +1,11 @@
+extends ../default
+
+block content
+
+  include ../templates/nav
+
+  div(class=['ui', 'container', 'grid', 'stackble'])
+    div(class=['sixteen', 'wide', 'column'])
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Produtos'
+
+      p= produtos[0].nome + ' ' + produtos[0].preco + ' ' + produtos[0].estoque

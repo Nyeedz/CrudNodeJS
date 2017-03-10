@@ -20,5 +20,9 @@ A presente aplicação, foi elaborada a fim de um sistema que te permite listar 
 #Como usar
 
 - Instalar Dependências
-- Criar um banco de dados em [Mysql](http://www.devmedia.com.br/introducao-ao-novo-mysql-workbench/25939)
-- Editar dentro da pasta Model o arquivo config.js de acordo com os dados de seu banco de dados.
+- Executar o arquivo db.sql para a criação do banco de dados.
+
+
+### instalação
+```sh
+npm install

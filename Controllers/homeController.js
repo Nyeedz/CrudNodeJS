@@ -1,6 +1,6 @@
 // Home Controller
 module.exports = {
-  getSignUp: (req, res, next) => {
-    return res.render('/');
+  index: (req, res, next) => {
+    res.render('index', {title: 'Bem vindo ao crud com nodeJS'});
   }
 }

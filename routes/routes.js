@@ -3,7 +3,7 @@ var router = express.Router();
 var controllers = require('.././controllers');
 
 /* Home Page. */
-router.get('/', controllers.homeController.getSignUp);
+router.get('/', controllers.homeController.index);
 
 /* Produtos Page. */
 router.get('/produtos', controllers.produtosController.getProdutos);

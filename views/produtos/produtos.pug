@@ -5,9 +5,11 @@ block content
   include ../templates/nav
 
   div(class=['ui', 'container', 'grid', 'stackble'])
+    div(class='row')
     div(class=['sixteen', 'wide', 'column'])
       h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Produtos'
-
+    
+    div(class=['sixteen', 'wide', 'column'])
       table(class=['ui', 'table', 'grey', 'celeed'] id='tbl-produtos')
         thead
           tr
@@ -22,7 +24,7 @@ block content
             tr
               td(id='id_produto')= produto.id_produtos
               td= produto.nome
-              td= '$' + produto.preco
+              td= 'R$ ' + produto.preco
               td= produto.estoque
               td= produto.data_criacao
               td

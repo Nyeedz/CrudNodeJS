@@ -3,7 +3,36 @@ extends default
 block content
 
   include templates/nav
-
-  div(class=['ui', 'container', 'grid', 'stackble'])
-    div(class=['ten', 'wide', 'column'])
-      h3(class=['ui', 'header', 'blue', 'dividing'])= 'Registrar'
+  
+  h2.ui.header.blue.dividing  Equipe
+  .ui.special.cards
+      .card
+        .dimmable.image
+          .ui.dimmer
+            .content
+              .center
+                .ui.inverted.button Facebook
+          img(src='http://localhost/crudNodeJS/views/images/first.jpg')
+        .content
+          a.header Christian Fernandes
+          .meta
+            span.date Criando em março 2017
+        .extra.content
+          a
+            i.users.icon
+            |         5 Members
+      .card
+        .dimmable.image
+          .ui.inverted.dimmer
+            .content
+              .center
+                .ui.primary.button Add Friend
+          img(src='/images/avatar/large/jenny.jpg')
+        .content
+          a.header Team Hess
+          .meta
+            span.date Create in Aug 2014
+        .extra.content
+          a
+            i.users.icon
+            |         2 Members

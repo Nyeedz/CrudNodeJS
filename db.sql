@@ -29,6 +29,17 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS 'users';
+CREATE TABLE 'users' (
+  'id' int(11) NOT NULL AUTO_INCREMENT,
+  'nome' varchar(255) NOT NULL,
+  'email' varchar(255) NOT NULL,
+  'password' varchar(255) NOT NULL
+);
+
+-- ----------------------------
 -- Records of produtos
 -- ----------------------------
 INSERT INTO `produtos` VALUES ('1', 'Banco criado com sucesso', '10', '10', '2017-03-10 14:33:22');

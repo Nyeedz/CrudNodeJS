@@ -5,6 +5,11 @@ var controllers = require('.././controllers');
 /* Home Page. */
 router.get('/', controllers.homeController.index);
 
+/* User Page */
+router.get('/auth/signup', controllers.userController.getSignUp);
+router.post('/auth/signup', controllers.userController.postSignUp);
+router.get('/auth/signin', controllers.userController.getSignIn);
+
 /* Produtos Page. */
 router.get('/produtos', controllers.produtosController.getProdutos);
 router.get('/novo', controllers.produtosController.getNovoProduto);

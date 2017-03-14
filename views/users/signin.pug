@@ -8,25 +8,18 @@ block content
     div(class='row')
     div(class=['sixteen', 'wide', 'column'])
 
-      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Cadastrar'
+      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Iniciar Sessão'
 
     div(class=['two', 'wide', 'column'])
     div(class=['eleven', 'wide', 'column'])
       div(class='form-novoproduto')
-        form(class=['ui', 'form'] action='/auth/signup' method='post' autocomplete='off')
-          div(class=['ui', 'field', 'required'])
-            label(for='nome')= 'Nome:'
-            input(type='text' name='nome' placeholder='Nome')
+        form(class=['ui', 'form'] action='' method='' autocomplete='off')
           div(class=['ui', 'field', 'required'])
             label(for='email')= 'Email:'
             input(type='email' name='email' placeholder='Email')
           div(class=['ui', 'field', 'required'])
             label(for='password')= 'Senha:'
             input(type='password' name='password' placeholder='Senha')
-          div(class=['ui', 'field', 'required'])
-            label(for='repeatpassword')= 'Repetir senha:'
-            input(type='password', name='repeatpassword', placeholder='Repetir senha')
               
-          button(class=['ui', 'button', 'basic', 'green'])= 'Cadastrar'
-          button(class=['ui', 'button', 'basic', 'blue'])= 'Limpar'
+          button(class=['ui', 'button', 'basic', 'green'])= 'Iniciar sessão'
           div(class=['ui', 'message', 'error'])

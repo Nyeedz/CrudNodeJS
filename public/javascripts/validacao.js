@@ -1,12 +1,21 @@
 $(function(){
   $('.ui.form').form({
     fields: {
+      nameproduto: {
+        identifier: 'nomeproduto',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Por favor, entre com o nome do produto.'
+          }
+        ]
+      },
       name: {
         identifier: 'nome',
         rules: [
           {
             type   : 'empty',
-            prompt : 'Por favor, entre com o nome do produto.'
+            prompt : 'Por favor, entre com seu nome.'
           }
         ]
       },
@@ -33,6 +42,45 @@ $(function(){
           {
             type : 'integer',
             prompt : 'Campo estoque deve ser do tipo numérico'
+          }
+        ]
+      },
+      email : {
+        identifier : 'email',
+        rules : [
+          {
+            type : 'empty',
+            prompt : 'Por favor, entre com o seu email.'
+          },
+          {
+            type   : 'email',
+           prompt : 'Por favor, entre com um email valido'
+          }
+        ]
+      },
+      password : {
+        identifier : 'password',
+        rules : [
+          {
+            type : 'empty',
+            prompt : 'Por favor, entre com o sua senha.'
+          },
+          {
+            type : 'minLength[6]',
+            prompt : 'Sua senha deve ter {ruleValue} caracteres'
+          }
+        ]
+      },
+      repeatpassword : {
+        identifier  : 'repeatpassword',
+        rules: [
+          {
+            type : 'empty',
+            prompt : 'Por favor, repita sua senha.'
+          },
+          {
+            type   : 'match[password]',
+            prompt : 'Por favor, coloque senhas iguais nos dos campos.'
           }
         ]
       }

@@ -4,22 +4,19 @@ block content
 
   include ../templates/nav
 
-  div(class=['ui', 'container', 'grid', 'stackble'])
-    div(class='row')
-    div(class=['sixteen', 'wide', 'column'])
-
-      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Iniciar Sessão'
-
-    div(class=['two', 'wide', 'column'])
-    div(class=['eleven', 'wide', 'column'])
-      div(class='form-novoproduto')
-        form(class=['ui', 'form'] action='' method='' autocomplete='off')
-          div(class=['ui', 'field', 'required'])
-            label(for='email')= 'Email:'
-            input(type='email' name='email' placeholder='Email')
-          div(class=['ui', 'field', 'required'])
-            label(for='password')= 'Senha:'
-            input(type='password' name='password' placeholder='Senha')
-              
-          button(class=['ui', 'button', 'basic', 'green'])= 'Iniciar sessão'
-          div(class=['ui', 'message', 'error'])
+  .ui.container.grid.stackble
+    .row
+    .sixteen.wide.column
+      h2.ui.header.blue.dividing Entrar
+    .two.wide.column
+    .eleven.wide.column
+      .form-novoproduto
+        form.ui.form(action='', method='', autocomplete='off')
+          .ui.field.required
+            label(for='email') Email
+            input(type='email', name='email', placeholder='Email')
+          .ui.field.required
+            label(for='password') Senha
+            input(type='password', name='password', placeholder='Senha')
+          button.ui.button.basic.green Iniciar sessão
+          .ui.message.error

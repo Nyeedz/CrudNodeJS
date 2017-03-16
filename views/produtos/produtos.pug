@@ -3,14 +3,13 @@ extends ../default
 block content
 
   include ../templates/nav
-
-  div(class=['ui', 'container', 'grid', 'stackble'])
-    div(class='row')
-    div(class=['sixteen', 'wide', 'column'])
-      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Lista de Produtos'
-    
-    div(class=['sixteen', 'wide', 'column'])
-      table(class=['ui', 'table', 'grey', 'celeed'] id='tbl-produtos')
+  
+  .ui.container.grid.stackble
+    .row
+    .sixteen.wide.column
+      h2.ui.header.blue.dividing Lista de Produtos
+    .sixteen.wide.column
+      table#tbl-produtos.ui.table.grey.celeed
         thead
           tr
             th= 'ID'
@@ -27,8 +26,8 @@ block content
               td= 'R$ ' + produto.preco
               td= produto.estoque
               td= produto.data_criacao
-              td
-                a(class=['ui', 'button', 'basic', 'icon', 'red'] href='#' data-inverted='' data-tooltip='Excluir' data_position='.center' id='btn_exlcuir')
-                  i(class=['trash', 'icon'])
-                a(class=['ui', 'button', 'basic', 'icon', 'blue'] href='/editarproduto/' + produto.id_produtos data-inverted='' data-tooltip='Editar' data_position='.center' id='btn_editar')
-                  i(class=['cut', 'icon'])
+              td  
+                a#btn_exlcuir.ui.button.basic.icon.red(href='#', data-inverted='', data-tooltip='Excluir', data_position='.center')
+                  i.trash.icon
+                a#btn_editar.ui.button.basic.icon.blue(href='/editarproduto/' + produto.id_produtos, data-inverted='', data-tooltip='Editar', data_position='.center') 
+                  i.cut.icon

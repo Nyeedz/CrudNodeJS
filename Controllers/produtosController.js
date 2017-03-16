@@ -1,12 +1,12 @@
 var mysql = require('mysql');
 var dateFormat = require('dateFormat');
+var config = require('.././Model/config');
 
 // Produtos Controller
 module.exports = {
   getProdutos: (req, res, next) => {
-    var config = require('.././Model/config');
-    var db = mysql.createConnection(config);
 
+    var db = mysql.createConnection(config);
     db.connect();
 
     var produtos = null;
@@ -36,9 +36,7 @@ module.exports = {
       data_criacao : date
     }
 
-    var config = require('.././Model/config');
     var db = mysql.createConnection(config);
-
     db.connect();
 
     db.query('INSERT INTO produtos SET ?', produto, (err, rows, fields) => {
@@ -53,9 +51,7 @@ module.exports = {
   excluirProduto: (req, res, next) => {
     var id = req.body.id;
 
-    var config = require('.././Model/config');
     var db = mysql.createConnection(config);
-
     db.connect();
 
     var resposta = {res: false};
@@ -72,9 +68,7 @@ module.exports = {
   getModificarProduto: (req, res, net) => {
     var id = req.params.id;
 
-    var config = require('.././Model/config');
     var db = mysql.createConnection(config);
-
     db.connect();
 
     var produto = null;
@@ -98,16 +92,14 @@ module.exports = {
       estoque : req.body.estoque
     };
 
-    var config = require('.././Model/config');
     var db = mysql.createConnection(config);
-
     db.connect();
 
     db.query('UPDATE produtos SET ? WHERE ?', [produto, {id_produtos: req.body.id_produtos}], (err, rows, fields) => {
       if(err) throw err;
       db.end();
-    });
 
-    res.redirect('/produtos');
+      res.redirect('/produtos');
+    });
   }
 }

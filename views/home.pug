@@ -4,35 +4,41 @@ block content
 
   include templates/nav
   
-  h2.ui.header.blue.dividing  Equipe
-  .ui.special.cards
-      .card
-        .dimmable.image
-          .ui.dimmer
+  .ui.container.grid.stackble
+    .row
+    .sixteen.wide.column
+      h2.ui.header.blue.dividing Equipe
+    .two.wide.column
+    .eleven.wide.column
+      #album
+        .ui.piled.compact.segment
+          .floating.ui.blue.label 9
+          .ui.card
+            .blurring.dimmable.image
+              .ui.inverted.dimmer
+                .content
+                  .center
+                    .ui.blue.button.view VIEW
+              |  
+              img(src='http://localhost/crudNodeJS/views/images/first.jpg')
             .content
-              .center
-                .ui.inverted.button Facebook
-          img(src='http://localhost/crudNodeJS/views/images/first.jpg')
-        .content
-          a.header Christian Fernandes
-          .meta
-            span.date Criando em março 2017
-        .extra.content
-          a
-            i.users.icon
-            |         5 Members
-      .card
-        .dimmable.image
-          .ui.inverted.dimmer
-            .content
-              .center
-                .ui.primary.button Add Friend
-          img(src='http://localhost/crudNodeJS/views/images/first.jpg')
-        .content
-          a.header Team Hess
-          .meta
-            span.date Create in Aug 2014
-        .extra.content
-          a
-            i.users.icon
-            |         2 Members
+              #rate.ui.star.rating.right.floated(data-rating='3')
+              .header Animals
+              .meta
+                span.date
+                  i.calendar.icon
+                  |  Created 7/27/2014
+                span.right.floated.date
+                  i.history.icon
+                  |  Modified 8/4/2014
+              .description  Different animals from around the world
+            .extra.content
+              .ui.right.labeled.button(data-content='Like it!', data-variation='tiny', tabindex='0')
+                .ui.blue.icon.tiny.button
+                  i.thumbs.outline.up.large.icon
+                |  
+                a.ui.basic.blue.left.pointing.label 365
+              .ui.left.labeled.right.floated.button(data-content='Share it!', data-variation='tiny', tabindex='0')
+                a.ui.basic.blue.right.pointing.label 183
+                .ui.blue.icon.tiny.button
+                  i.external.share.large.icon

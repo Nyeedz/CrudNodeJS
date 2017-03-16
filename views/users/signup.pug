@@ -3,30 +3,27 @@ extends ../default
 block content
 
   include ../templates/nav
-
-  div(class=['ui', 'container', 'grid', 'stackble'])
-    div(class='row')
-    div(class=['sixteen', 'wide', 'column'])
-
-      h2(class=['ui', 'header', 'blue', 'dividing'])= 'Cadastrar'
-
-    div(class=['two', 'wide', 'column'])
-    div(class=['eleven', 'wide', 'column'])
-      div(class='form-novoproduto')
-        form(class=['ui', 'form'] action='/auth/signup' method='post' autocomplete='off')
-          div(class=['ui', 'field', 'required'])
-            label(for='nome')= 'Nome:'
-            input(type='text' name='nome' placeholder='Nome')
-          div(class=['ui', 'field', 'required'])
-            label(for='email')= 'Email:'
-            input(type='email' name='email' placeholder='Email')
-          div(class=['ui', 'field', 'required'])
-            label(for='password')= 'Senha:'
-            input(type='password' name='password' placeholder='Senha')
-          div(class=['ui', 'field', 'required'])
-            label(for='repeatpassword')= 'Repetir senha:'
+  
+  .ui.container.grid.stackble
+    .row
+    .sixteen.wide.column
+      h2.ui.header.blue.dividing Cadastrar
+    .two.wide.column
+    .eleven.wide.column
+      .form-novoproduto
+        form.ui.form(action='/auth/signup', method='post', autocomplete='off')
+          .ui.field.required
+            label(for='nome') Nome
+            input(type='text', name='nome', placeholder='Nome')
+          .ui.field.required
+            label(for='email') Email
+            input(type='email', name='email', placeholder='Email')
+          .ui.field.required
+            label(for='password') Senha
+            input(type='password', name='password', placeholder="Senha")
+          .ui.field.required
+            label(for='repeatpassword') Repetir senha
             input(type='password', name='repeatpassword', placeholder='Repetir senha')
-              
-          button(class=['ui', 'button', 'basic', 'green'])= 'Cadastrar'
-          button(class=['ui', 'button', 'basic', 'blue'])= 'Limpar'
-          div(class=['ui', 'message', 'error'])
+          button.ui.button.basic.green Cadastrar
+          button.ui.button.basic.blue Limpar
+          .ui.message.error

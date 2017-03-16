@@ -20,9 +20,8 @@ Portal de controle de chamadas por digital, onde te permite listar alunos cadast
 ### Como usar
 
 - Instalar Dependências
-- Executar o arquivo db.sql para a criação do banco de dados.
-
 
 ### instalação
 ```sh
 npm install
+Executar a query do arquivo db.sql para a criação dod bancos de dados.

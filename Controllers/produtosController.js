@@ -11,7 +11,7 @@ module.exports = {
 
     var produtos = null;
 
-    db.query('SELECT * FROM produtos', (err, rows, fields) => {
+    db.query('SELECT * FROM produtos WHERE isDeleted = 0', (err, rows, fields) => {
       if(err) throw err;
 
       produtos = rows;
@@ -30,7 +30,7 @@ module.exports = {
     var date = dateFormat(dataAtual, 'yyyy-mm-dd h:MM:ss');
 
     var produto = {
-      nome : req.body.nome,
+      nome : req.body.nomeproduto,
       preco : req.body.preco,
       estoque : req.body.estoque,
       data_criacao : date
@@ -55,7 +55,7 @@ module.exports = {
     db.connect();
 
     var resposta = {res: false};
-    db.query('DELETE FROM produtos WHERE id_produtos = ?', id, (err, rows, fields) => {
+    db.query('UPDATE produtos SET isDeleted = 1 WHERE id_produtos = ?', id, (err, rows, fields) => {
       if(err) throw err;
 
       db.end();
@@ -87,7 +87,7 @@ module.exports = {
   postEditarProduto: (req, res, next) => {
 
     var produto = {
-      nome : req.body.nome,
+      nome : req.body.nomeproduto,
       preco : req.body.preco,
       estoque : req.body.estoque
     };

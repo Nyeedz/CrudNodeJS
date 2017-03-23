@@ -10,15 +10,6 @@ $(function(){
           }
         ]
       },
-      name: {
-        identifier: 'nome',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Por favor, entre com seu nome.'
-          }
-        ]
-      },
       preco : {
         identifier : 'preco',
         rules : [
@@ -42,6 +33,15 @@ $(function(){
           {
             type : 'integer',
             prompt : 'Campo estoque deve ser do tipo numérico'
+          }
+        ]
+      },
+      name: {
+        identifier: 'nome',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Por favor, entre com seu nome.'
           }
         ]
       },

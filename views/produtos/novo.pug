@@ -11,10 +11,10 @@ block content
     .two.wide.column
     .eleven.wide.column
       .form-novoproduto
-        form.ui.form(action='/criarproduto', method='post', autocomplete=off)
+        form.ui.form(action='/criarproduto', method='post', autocomplete='off')
           .ui.field.required
-            label(for='preco') Nome do Produto
-            input(type='text', name='preco', placeholder='Nome do Produto')
+            label(for='nomeproduto') Nome do Produto
+            input(type='text', name='nomeproduto', placeholder='Nome do Produto')
           .ui.two.fields
             .ui.field.required
               label(for='preco') Preco
@@ -23,8 +23,9 @@ block content
               label(for='estoque') Estoque
               input(type='text', name='estoque', placeholder='Estoque')
           button.ui.button.basic.green Adicionar Produto
-        if info != undefined
+        
           .ui.message.error
+        if info != undefined
           .ui.message.success
             i.close.icon
             .header Produto Registrado !

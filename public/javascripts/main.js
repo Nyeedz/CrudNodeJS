@@ -31,4 +31,17 @@ $(document).ready(function() {
       $('#album').fadeIn("slow");
     });
   }));
+
+  var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}',{ auth: {
+    redirectUrl: '#{env.AUTH0_CALLBACK_URL}',
+    responseType: 'code',
+    params: {
+        scope: 'openid name email picture'
+    }
+  }});
+
+  $('.ir').on('click', function() {
+    // Show lock's login widget
+    lock.show();
+  });
 });

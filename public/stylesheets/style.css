@@ -33,3 +33,9 @@ a {
   #album_items .ui.cards {
     margin: 10px;
   }
+
+  .login {
+    width: 280px;
+    margin: 40px auto;
+    padding: 10px;
+  }

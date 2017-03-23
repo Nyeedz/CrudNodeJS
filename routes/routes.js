@@ -1,14 +1,34 @@
 var express = require('express');
+var passport = require('passport');
 var router = express.Router();
 var controllers = require('.././controllers');
+
+var env = {
+  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+  AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
+  AUTH0_CALLBACK_URL: process.env.AUTH0_CALLBACK_URL || 'http://localhosto:3000/callback'
+};
 
 /* Home Page. */
 router.get('/', controllers.homeController.index);
 
 /* User Page */
-router.get('/auth/signup', controllers.userController.getSignUp);
-router.post('/auth/signup', controllers.userController.postSignUp);
-router.get('/auth/signin', controllers.userController.getSignIn);
+// Render the login template
+router.get('users/login', (req, res) => {
+    res.render('login', { env: env });
+  });
+
+// Perform session logout and redirect to homepage
+router.get('users/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+
+// Perform the final stage of authentication and redirect to '/user'
+router.get('/callback',
+  passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }), (req, res) => {
+    res.redirect(req.session.returnTo || 'users/user');
+  });
 
 /* Produtos Page. */
 router.get('/produtos', controllers.produtosController.getProdutos);

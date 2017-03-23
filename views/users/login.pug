@@ -1,8 +1,15 @@
 extends ../default
 
 block content
-
-  include ../templates/nav
   
   .login#root
-    
+  script.
+    var lock = new Auth0Lock('sLR7GCeCEpfxdCbUOhF7e3IsIMgiZvDa', 'nyeedz.auth0.com',{ auth: {
+      redirectUrl: 'http://localhost:3000/callback',
+      responseType: 'code',
+      params: {
+          scope: 'openid name email picture'
+      }
+    }});
+    lock.show();
+  

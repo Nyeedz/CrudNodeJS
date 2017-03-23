@@ -14,12 +14,12 @@ router.get('/', controllers.homeController.index);
 
 /* User Page */
 // Render the login template
-router.get('users/login', (req, res) => {
-    res.render('login', { env: env });
+router.get('/login', (req, res) => {
+    res.render('users/login', { env: env });
   });
 
 // Perform session logout and redirect to homepage
-router.get('users/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
 });
@@ -27,7 +27,7 @@ router.get('users/logout', (req, res) => {
 // Perform the final stage of authentication and redirect to '/user'
 router.get('/callback',
   passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }), (req, res) => {
-    res.redirect(req.session.returnTo || 'users/user');
+    res.redirect(req.session.returnTo || '/user');
   });
 
 /* Produtos Page. */
